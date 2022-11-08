@@ -27,9 +27,11 @@ const Services = () => {
           ></LimitedServiceCard>
         ))}
       </div>
-      <Link to="/services">
-        <button className="btn btn-outline btn-primary">See ALL</button>
-      </Link>
+      <div className="text-center mb-10">
+        <Link to="/services">
+          <button className="btn btn-outline btn-warning  mt-7">See ALL</button>
+        </Link>
+      </div>
     </div>
   );
 };

@@ -14,7 +14,11 @@ const BannerItem = ({ slide }) => {
       <div className="absolute flex justify-end transform -translate-y-1/2 left-96 top-1/4">
         <h1 className="text-6xl font-bold text-white">Get Your Tour From Us</h1>
       </div>
-      <div className="absolute flex justify-end transform -translate-y-1/2 w-2/5 left-80 top-1/2">
+      <div
+        className="absolute flex justify-end transform -translate-y-1/2 w-2/5 left-80
+      
+       top-1/2"
+      >
         <p className="text-xl text-white">
           Travel Easy is the best platform for tourism.
         </p>
