@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./BannerItem.css";
 
 const BannerItem = ({ slide }) => {
@@ -24,7 +25,9 @@ const BannerItem = ({ slide }) => {
         </p>
       </div>
       <div className="absolute flex justify-center transform -translate-y-1/2 w-2/5 left-96 top-3/4">
-        <button className="btn neon-button mr-5">Check the Services</button>
+        <Link to="/services">
+          <button className="btn neon-button mr-5">Check the Services</button>
+        </Link>
         <button className="btn btn-outline btn-warning">Warning</button>
       </div>
       <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">

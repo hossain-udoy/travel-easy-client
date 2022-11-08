@@ -39,7 +39,7 @@ const Navbar = () => {
           </li>
           <li title="Services">
             <NavLink
-              to="/user"
+              to="/services"
               className={({ isActive }) => (isActive ? "active" : undefined)}
             >
               <span className="icon">
