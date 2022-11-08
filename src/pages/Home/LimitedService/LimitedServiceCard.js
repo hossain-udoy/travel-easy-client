@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
 
 const LimitedServiceCard = ({ service }) => {
   const { _id, img, price, location, description } = service;
@@ -14,13 +16,18 @@ const LimitedServiceCard = ({ service }) => {
             </div>
             <div className="absolute my-rotate-y-180 backface-hidden w-full h-full bg-slate-600 overflow-hidden">
               <div className="text-center flex flex-col items-center justify-center h-full text-white px-2 pb-24">
+                <PhotoProvider>
+                  <PhotoView src={img}>
+                    <img src={img} className="w-28 h-28" alt="hi" />
+                  </PhotoView>
+                </PhotoProvider>
                 <h1 className="text-4xl font-semibold">{location}</h1>
                 <p className="my-2">Price:{price}/per-person</p>
                 <p className="text-justify mt-2 mx-1">
                   {description.slice(0, 100) + "..."}
                 </p>
                 <Link to={`/services/${_id}`}>
-                  <button className="bg-stone-500 px-6 py-2 font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-20 group-hover:left-20 scale-0 group-hover:scale-125">
+                  <button className="bg-stone-500 px-3 py-2 font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-16 group-hover:left-32 text-sm scale-0 group-hover:scale-125">
                     Full Details
                   </button>
                 </Link>
