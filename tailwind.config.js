@@ -22,5 +22,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [Myclass],
+  plugins: [Myclass, require("daisyui")],
 };
