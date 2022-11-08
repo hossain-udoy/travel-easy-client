@@ -19,7 +19,7 @@ const LimitedServiceCard = ({ service }) => {
                 <p className="text-justify mt-2 mx-1">
                   {description.slice(0, 100) + "..."}
                 </p>
-                <Link to={`/checkout/${_id}`}>
+                <Link to={`/services/${_id}`}>
                   <button className="bg-stone-500 px-6 py-2 font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-20 group-hover:left-20 scale-0 group-hover:scale-125">
                     Full Details
                   </button>

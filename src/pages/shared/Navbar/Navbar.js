@@ -14,7 +14,7 @@ import {
 const Navbar = () => {
   return (
     <div className="box">
-      <div className="container flex justify-center items-center">
+      <div className="contain flex justify-center items-center">
         <NavLink
           to="/"
           aria-label="Easy-Travel"

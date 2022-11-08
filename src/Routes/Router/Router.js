@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Home from "../../pages/Home/Home";
 import Services from "../../pages/Services/Services";
+import SingleServiceCard from "../../pages/SingleServiceCard/SingleServiceCard";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,12 @@ const router = createBrowserRouter([
       {
         path: "/video",
         element: <div>Video</div>,
+      },
+      {
+        path: "/services/:id",
+        element: <SingleServiceCard></SingleServiceCard>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/${params.id}`),
       },
     ],
   },
