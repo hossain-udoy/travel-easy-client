@@ -1,11 +1,11 @@
 import React from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/Easy-Tour.png";
-// import { useContext } from "react";
-// import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
-// import { FaUser } from "react-icons/fa";
-// import { useState } from 'react';
+import { useContext } from "react";
+import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
+import { FaUser } from "react-icons/fa";
+// import { useState } from "react";
 
 import {
   IoIosBook,
@@ -16,13 +16,13 @@ import {
 } from "react-icons/io";
 
 const Navbar = () => {
-  // const { user, logOut } = useContext(AuthContext);
+  const { user, userLogOut } = useContext(AuthContext);
 
-  // const handleLogOut = () => {
-  //   logOut()
-  //     .then(() => {})
-  //     .catch((error) => console.error(error));
-  // };
+  const handleLogOut = () => {
+    userLogOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
 
   return (
     <div className="box">
@@ -73,7 +73,7 @@ const Navbar = () => {
           </li>
           <li title="My Reviews">
             <NavLink
-              to="/photo"
+              to="/myReview"
               className={({ isActive }) => (isActive ? "active" : undefined)}
             >
               <span className="icon">
@@ -94,7 +94,7 @@ const Navbar = () => {
             </NavLink>
           </li>
         </ul>
-        {/* <div className="flex items-center lg:flex gap-4">
+        <div className="flex items-center lg:flex gap-4">
           <Link to="/profile">
             {user?.photoURL ? (
               <img
@@ -108,7 +108,7 @@ const Navbar = () => {
               <FaUser></FaUser>
             )}
           </Link>
-          {user?.uid ? (
+          {user?.email ? (
             <>
               <span className="mr-1">{user?.displayName}</span>
 
@@ -122,7 +122,7 @@ const Navbar = () => {
               </Link>
             </>
           ) : (
-            <>
+            <div>
               <Link
                 to="/login"
                 className="inline-flex items-center justify-center h-12 px-6 font-medium  text-black transition duration-200 rounded shadow-md  hover:bg-purple-500   focus:shadow-outline focus:outline-none"
@@ -131,9 +131,9 @@ const Navbar = () => {
               >
                 Log In
               </Link>
-            </>
-          )} */}
-        {/* </div> */}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

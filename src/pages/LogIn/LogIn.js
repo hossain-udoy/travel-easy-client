@@ -37,19 +37,19 @@ const LogIn = () => {
           email: user.email,
         };
 
-        // fetch(" https://food-masty-server.vercel.app/jwt", {
-        //   method: "POST",
-        //   headers: {
-        //     "content-type": "application/json",
-        //   },
-        //   body: JSON.stringify(currentUser),
-        // })
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     localStorage.setItem("recipe-token", data.token);
-        //     navigate(from, { replace: true });
-        //     toast.success(" email login success");
-        //   });
+        fetch(" http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            localStorage.setItem("tour-token", data.token);
+            navigate(from, { replace: true });
+            toast.success(" email login success");
+          });
       })
       .catch((error) => {
         setErrors({ ...errors, fireError: error.message });
@@ -60,20 +60,20 @@ const LogIn = () => {
     continueWithGoogle()
       .then((result) => {
         const user = result.user;
-        // const currentUser = {
-        //   email: user.email,
-        // };
-        // fetch(" https://food-masty-server.vercel.app/jwt", {
-        //   method: "POST",
-        //   headers: { "content-type": "application/json" },
-        //   body: JSON.stringify(currentUser),
-        // })
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     localStorage.setItem("recipe-token", data.token);
-        //     navigate(from, { replace: true });
-        //     toast.success("google success");
-        //   });
+        const currentUser = {
+          email: user.email,
+        };
+        fetch(" http://localhost:5000/jwt", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            localStorage.setItem("tour-token", data.token);
+            navigate(from, { replace: true });
+            toast.success("google success");
+          });
       })
       .catch((error) => {
         console.error(error);
