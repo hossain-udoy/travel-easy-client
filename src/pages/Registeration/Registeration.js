@@ -135,7 +135,11 @@ const Registeration = () => {
               <div className="icon">
                 <FaEnvelope></FaEnvelope>
               </div>
-              <input type="text" placeholder="Email" />
+              <input
+                onChange={handleEmailOnChange}
+                type="email"
+                placeholder="Email"
+              />
             </div>
             <div className="input-field flex my-3 justify-center items-center gap-2">
               <div className="icon">
