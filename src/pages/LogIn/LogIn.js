@@ -107,6 +107,9 @@ const LogIn = () => {
     <div className="cont">
       <div className="bo">
         <form onSubmit={signInWithEmailAndPassword} action="" className="form">
+          {errors.fireError && (
+            <p className=" text-center text-red-400">{errors.fireError}</p>
+          )}
           <h2 className="title">Log In</h2>
 
           <div className="input-box">

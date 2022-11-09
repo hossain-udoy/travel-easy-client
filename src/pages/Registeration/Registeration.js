@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import toast from "react-hot-toast";
 // import toast from "react-hot-toast";
+
 import {
   FaUser,
   FaLock,
@@ -9,6 +9,8 @@ import {
   FaGoogle,
   FaLinkedin,
   FaEnvelope,
+  FaTimes,
+  FaImage,
 } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
@@ -40,6 +42,7 @@ const Registeration = () => {
     continueWithGoogle()
       .then((result) => {
         const user = result.user;
+        console.log(user);
         const currentUser = {
           email: user.email,
         };
@@ -119,12 +122,15 @@ const Registeration = () => {
       <div className="containr">
         <div className="fox ">
           <form onSubmit={createUser} className="sign-up-form">
+            {errors.fireError && (
+              <p className=" text-center text-red-400">{errors.fireError}</p>
+            )}
             <h2 className="title">Sign up</h2>
             <div className="input-field flex my-3 justify-center items-center gap-2">
               <div className="icon">
                 <FaUser></FaUser>
               </div>
-              <input type="text" placeholder="Username" />
+              <input name="name" type="text" placeholder="Username" />
             </div>
             <div className="input-field flex my-3 justify-center items-center gap-2 ">
               <div className="icon">
@@ -136,6 +142,18 @@ const Registeration = () => {
                 placeholder="Email"
               />
             </div>
+            {errors.email && (
+              <p className="flex items-center gap-1 text-red-400">
+                <FaTimes className="mt-2" />
+                {errors.email}
+              </p>
+            )}
+            <div className="input-field flex my-3 justify-center items-center gap-2">
+              <div className="icon">
+                <FaImage></FaImage>
+              </div>
+              <input name="photoUrl" type="text" placeholder="Image Url" />
+            </div>
             <div className="input-field flex my-3 justify-center items-center gap-2">
               <div className="icon">
                 <FaLock></FaLock>
@@ -146,6 +164,13 @@ const Registeration = () => {
                 placeholder="Password"
               />
             </div>
+            {errors.password && (
+              <p className="flex items-center gap-1 text-red-400">
+                <FaTimes className="mt-2" />
+                {errors.password}
+              </p>
+            )}
+
             <input
               type="submit"
               value="Sign up"
@@ -163,7 +188,7 @@ const Registeration = () => {
               <a href="/registeration" className="social-icon">
                 <FaTwitter></FaTwitter>
               </a>
-              <a href="/" onClick={signUpWithGoogle} className="social-icon">
+              <a onClick={signUpWithGoogle} className=" btn social-icon">
                 <FaGoogle></FaGoogle>
               </a>
               <a href="/registeration" className="social-icon">
