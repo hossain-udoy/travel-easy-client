@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import {
   FaUser,
   FaLock,
@@ -42,17 +43,17 @@ const Registeration = () => {
         const currentUser = {
           email: user.email,
         };
-        fetch(" https://food-masty-server.vercel.app/jwt", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(currentUser),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            localStorage.setItem("recipe-token", data.token);
-            navigate(from, { replace: true });
-            toast.success("google success");
-          });
+        // fetch(" https://food-masty-server.vercel.app/jwt", {
+        //   method: "POST",
+        //   headers: { "content-type": "application/json" },
+        //   body: JSON.stringify(currentUser),
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     localStorage.setItem("recipe-token", data.token);
+        //     navigate(from, { replace: true });
+        //     toast.success("google success");
+        //   });
       })
       .catch((error) => {
         console.error(error);
@@ -72,23 +73,17 @@ const Registeration = () => {
         const currentUser = {
           email: user.email,
         };
-        fetch(" https://food-masty-server.vercel.app/jwt", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(currentUser),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            localStorage.setItem("recipe-token", data.token);
-            navigate(from, { replace: true });
-            Swal.fire({
-              position: "top-center",
-              icon: "success",
-              title: "your account has been created successfully",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-          });
+        // fetch(" https://food-masty-server.vercel.app/jwt", {
+        //   method: "POST",
+        //   headers: { "content-type": "application/json" },
+        //   body: JSON.stringify(currentUser),
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     localStorage.setItem("recipe-token", data.token);
+        //     navigate(from, { replace: true });
+        //     toast.success("hello");
+        //   });
       })
       .catch((error) => {
         setLoading(false);
