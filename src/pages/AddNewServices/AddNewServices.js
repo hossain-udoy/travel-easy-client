@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import Button from "@restart/ui/esm/Button";
+import toast from "react-hot-toast";
 
 const AddNewServices = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -15,7 +16,7 @@ const AddNewServices = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          alert("New package added");
+          toast.success("New package added");
           reset();
         }
       });
@@ -28,9 +29,9 @@ const AddNewServices = () => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         action=""
-        className="mt-6 mb-5 mx-44 space-y-4 rounded-lg p-8 shadow-2xl shadow-slate-50"
+        className="mt-6 mb-5 lg:mx-44 space-y-4 rounded-lg p-8 shadow-2xl shadow-slate-50 text-center"
       >
-        <div className="ml-44">
+        <div>
           <label for="Location" className="text-lg font-medium text-white">
             Tour Location
           </label>
@@ -46,7 +47,7 @@ const AddNewServices = () => {
             />
           </div>
         </div>
-        <div className="ml-44">
+        <div>
           <label for="Description" className="text-lg font-medium text-white">
             Description
           </label>
@@ -63,7 +64,7 @@ const AddNewServices = () => {
             ></textarea>
           </div>
         </div>
-        <div className="ml-44">
+        <div>
           <label for="email" className="text-lg font-medium text-white">
             Price
           </label>
@@ -75,11 +76,11 @@ const AddNewServices = () => {
               type="number"
               placeholder="Price"
               required
-              className="input w-3/4 text-white input-bordered"
+              className="input w-3/4 text-black input-bordered"
             />
           </div>
         </div>
-        <div className="ml-44">
+        <div>
           <label for="email" className="text-lg font-medium text-white">
             Day
           </label>
@@ -91,11 +92,11 @@ const AddNewServices = () => {
               type="number"
               placeholder="Days"
               required
-              className="input w-3/4 text-white input-bordered"
+              className="input w-3/4 text-black input-bordered"
             />
           </div>
         </div>
-        <div className="ml-44">
+        <div>
           <label for="email" className="text-lg font-medium text-white">
             Number Of Ratings
           </label>
@@ -107,11 +108,11 @@ const AddNewServices = () => {
               type="number"
               placeholder="Ratings"
               required
-              className="input w-3/4 text-white input-bordered"
+              className="input w-3/4 text-black input-bordered"
             ></input>
           </div>
         </div>
-        <div className="ml-44">
+        <div>
           <label for="email" className="text-lg font-medium text-white">
             Image Url
           </label>
@@ -123,14 +124,14 @@ const AddNewServices = () => {
               type="url"
               placeholder="Image url"
               required
-              className="input w-3/4 text-white input-bordered"
+              className="input w-3/4 text-black input-bordered"
             ></input>
           </div>
         </div>
 
         <Button
           type="submit"
-          className="ml-28 block w-3/4 rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
+          className=" text-center block w-3/4 mx-auto rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
         >
           Submit
         </Button>

@@ -22,7 +22,7 @@ const LimitedServiceCard = ({ service }) => {
                   </PhotoView>
                 </PhotoProvider>
                 <h1 className="text-4xl font-semibold">{location}</h1>
-                <p className="my-2">Price:{price}/per-person</p>
+                <p className="my-2">Price: $ {price}/per-person</p>
                 <p className="text-justify mt-2 mx-1">
                   {description.slice(0, 100) + "..."}
                 </p>
