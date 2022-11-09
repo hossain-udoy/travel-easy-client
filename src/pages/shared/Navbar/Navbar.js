@@ -72,13 +72,13 @@ const Navbar = () => {
           </li>
           <li title="Add New Services">
             <NavLink
-              to="/video"
+              to="/addNewServices"
               className={({ isActive }) => (isActive ? "active" : undefined)}
             >
               <span className="icon">
                 <IoIosBook></IoIosBook>
               </span>
-              <span className="text">Add New Services</span>
+              <span className="text">Add Services</span>
             </NavLink>
           </li>
         </ul>

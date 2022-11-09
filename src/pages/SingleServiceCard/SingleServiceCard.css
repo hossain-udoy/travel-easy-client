@@ -180,7 +180,7 @@
   overflow: hidden;
 }
 .card .content .details {
-  padding-top: 40px;
+  padding-top: 60px;
   transition: 0.5s;
   color: #45f3ff;
   transform: translateY(170px);

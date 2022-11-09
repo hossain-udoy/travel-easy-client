@@ -1,6 +1,7 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
+import AddNewServices from "../../pages/AddNewServices/AddNewServices";
 import Home from "../../pages/Home/Home";
 import Services from "../../pages/Services/Services";
 import SingleServiceCard from "../../pages/SingleServiceCard/SingleServiceCard";
@@ -27,8 +28,8 @@ const router = createBrowserRouter([
         element: <div>Photo</div>,
       },
       {
-        path: "/video",
-        element: <div>Video</div>,
+        path: "/addNewServices",
+        element: <AddNewServices></AddNewServices>,
       },
       {
         path: "/services/:id",
