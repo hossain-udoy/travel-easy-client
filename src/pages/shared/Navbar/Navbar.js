@@ -50,7 +50,7 @@ const Navbar = () => {
           </li>
           <li title="Blog">
             <NavLink
-              to="/chat"
+              to="/blog"
               className={({ isActive }) => (isActive ? "active" : undefined)}
             >
               <span className="icon">

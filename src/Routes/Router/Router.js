@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import AddNewServices from "../../pages/AddNewServices/AddNewServices";
+import Blog from "../../pages/Blog/Blog";
 import Home from "../../pages/Home/Home";
 import Services from "../../pages/Services/Services";
 import SingleServiceCard from "../../pages/SingleServiceCard/SingleServiceCard";
@@ -20,8 +21,8 @@ const router = createBrowserRouter([
         element: <Services></Services>,
       },
       {
-        path: "/chat",
-        element: <div>Chat</div>,
+        path: "/blog",
+        element: <Blog></Blog>,
       },
       {
         path: "/photo",
