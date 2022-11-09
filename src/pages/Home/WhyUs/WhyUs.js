@@ -1,6 +1,7 @@
 import React from "react";
 import { FaUserSecret, FaUserGraduate, FaUserPlus } from "react-icons/fa";
-import { CiFaceSmile } from "react-icons/ci";
+// import { CiFaceSmile } from "react-icons/ci";
+import { BsEmojiSmile } from "react-icons/bs";
 
 const WhyUs = () => {
   return (
@@ -40,7 +41,7 @@ const WhyUs = () => {
           className=" flex flex-col text-3xl rounded-xl border border-gray-800 bg-white text-slate-500 p-16 items-center justify-center shadow-xl shadow-slate-500"
           href="/"
         >
-          <CiFaceSmile></CiFaceSmile>
+          <BsEmojiSmile />
           <h3 className="mt-3 text-xl font-bold text-slate-900">
             90% of our traveller happy
           </h3>

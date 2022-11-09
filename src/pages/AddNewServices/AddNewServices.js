@@ -31,23 +31,23 @@ const AddNewServices = () => {
         action=""
         className="mt-6 mb-5 lg:mx-44 space-y-4 rounded-lg p-8 shadow-2xl shadow-slate-50 text-center"
       >
-        <div>
+        <div className="w-3/4">
           <label for="Location" className="text-lg font-medium text-white">
             Tour Location
           </label>
 
-          <div className="relative mt-1">
+          <div className="relative w-full mt-1">
             <input
               name="location"
               {...register("location")}
               type="text"
               placeholder="Tour Location"
               required
-              className="input w-3/4 text-white input-bordered"
+              className="input w-full text-white input-bordered"
             />
           </div>
         </div>
-        <div>
+        <div className="w-3/4">
           <label for="Description" className="text-lg font-medium text-white">
             Description
           </label>
@@ -60,11 +60,11 @@ const AddNewServices = () => {
               type="text"
               placeholder="Tour Description"
               required
-              className="textarea textarea-bordered h-24 w-3/4"
+              className="textarea textarea-bordered h-24 w-full"
             ></textarea>
           </div>
         </div>
-        <div>
+        <div className="w-3/4">
           <label for="email" className="text-lg font-medium text-white">
             Price
           </label>
@@ -76,11 +76,11 @@ const AddNewServices = () => {
               type="number"
               placeholder="Price"
               required
-              className="input w-3/4 text-black input-bordered"
+              className="input w-full text-black input-bordered"
             />
           </div>
         </div>
-        <div>
+        <div className="w-3/4">
           <label for="email" className="text-lg font-medium text-white">
             Day
           </label>
@@ -92,11 +92,11 @@ const AddNewServices = () => {
               type="number"
               placeholder="Days"
               required
-              className="input w-3/4 text-black input-bordered"
+              className="input w-full text-black input-bordered"
             />
           </div>
         </div>
-        <div>
+        <div className="w-3/4">
           <label for="email" className="text-lg font-medium text-white">
             Number Of Ratings
           </label>
@@ -108,11 +108,11 @@ const AddNewServices = () => {
               type="number"
               placeholder="Ratings"
               required
-              className="input w-3/4 text-black input-bordered"
+              className="input w-full text-black input-bordered"
             ></input>
           </div>
         </div>
-        <div>
+        <div className="w-3/4">
           <label for="email" className="text-lg font-medium text-white">
             Image Url
           </label>
@@ -124,7 +124,7 @@ const AddNewServices = () => {
               type="url"
               placeholder="Image url"
               required
-              className="input w-3/4 text-black input-bordered"
+              className="input w-full text-black input-bordered"
             ></input>
           </div>
         </div>
