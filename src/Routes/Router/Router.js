@@ -6,6 +6,7 @@ import Blog from "../../pages/Blog/Blog";
 import Home from "../../pages/Home/Home";
 import Services from "../../pages/Services/Services";
 import SingleServiceCard from "../../pages/SingleServiceCard/SingleServiceCard";
+import LogIn from "../../pages/LogIn/LogIn";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/addNewServices",
         element: <AddNewServices></AddNewServices>,
+      },
+      {
+        path: "/login",
+        element: <LogIn></LogIn>,
       },
       {
         path: "/services/:id",
