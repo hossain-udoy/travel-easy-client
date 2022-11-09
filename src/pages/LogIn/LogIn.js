@@ -5,7 +5,7 @@ import { FaFacebook, FaTwitter, FaGoogle, FaLinkedin } from "react-icons/fa";
 const LogIn = () => {
   return (
     <div className="cont">
-      <div className="bo ">
+      <div className="bo">
         <form action="" className="form">
           <h2 className="title">Log In</h2>
           <div className="input-box">
