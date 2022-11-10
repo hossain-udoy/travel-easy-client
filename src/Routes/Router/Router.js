@@ -10,6 +10,7 @@ import LogIn from "../../pages/LogIn/LogIn";
 import Registeration from "../../pages/Registeration/Registeration";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import MyReview from "../../pages/MyReview/MyReview";
+import Privacy from "../../pages/PrivacyPolicy/Privacy";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/registeration",
         element: <Registeration></Registeration>,
+      },
+      {
+        path: "/privacy",
+        element: <Privacy></Privacy>,
       },
       {
         path: "/services/:id",

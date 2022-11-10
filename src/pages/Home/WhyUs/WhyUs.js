@@ -7,7 +7,7 @@ const WhyUs = () => {
   return (
     <div className="text-center py-5">
       <h5 className="text-slate-300 font-semibold text-3xl">Why Us</h5>
-      <h2>Why You Are Travel With Easy-Travel</h2>
+      <h2>The reason you travel with easy travel</h2>
 
       <div className="flex lg:flex-row flex-col gap-5 mb-8 mx-5 mt-5">
         <a

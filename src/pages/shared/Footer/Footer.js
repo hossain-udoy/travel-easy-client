@@ -191,7 +191,7 @@ const Footer = () => {
           <div className="mt-12 border-t border-gray-800 pt-12">
             <div className="text-sm text-gray-300 sm:flex sm:items-center sm:justify-between">
               <div className="flex gap-3">
-                <a className="hover:opacity-75" href="/">
+                <a className="hover:opacity-75" href="/privacy">
                   Privacy Policy
                 </a>
               </div>
