@@ -12,11 +12,14 @@ const MyReview = () => {
   const { user, userLogOut } = useContext(AuthContext);
   const [myReview, setMyReview] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/myReview?email=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("tour-token")}`,
-      },
-    })
+    fetch(
+      `https://travel-easy-server.vercel.app/myReview?email=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("tour-token")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           return userLogOut();
@@ -31,7 +34,7 @@ const MyReview = () => {
       "Are you sure ? You want to delete this review?"
     );
     if (confirm) {
-      fetch(`http://localhost:5000/review/${id}`, {
+      fetch(`https://travel-easy-server.vercel.app/review/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

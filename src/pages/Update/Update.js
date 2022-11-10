@@ -4,6 +4,26 @@ const UpdateReview = () => {
   const navigate = useNavigate();
   const review = useLoaderData();
   console.log(review);
+  // date format
+  function formatDate(date) {
+    const yyyy = date.getFullYear();
+    let mm = date.getMonth() + 1;
+    let dd = date.getDate();
+
+    if (dd < 10) dd = "0" + dd;
+    if (mm < 10) mm = "0" + mm;
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let ampm = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    let strTime =
+      hours + ":" + minutes + " " + ampm + " " + dd + "/" + mm + "/" + yyyy;
+    return strTime;
+  }
+
+  const currentDate = formatDate(new Date());
   const handleUpdateReview = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -19,8 +39,9 @@ const UpdateReview = () => {
       star,
       email,
       userImg,
+      currentDate,
     };
-    fetch(`http://localhost:5000/review/${review?._id}`, {
+    fetch(`https://travel-easy-server.vercel.app/review/${review?._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

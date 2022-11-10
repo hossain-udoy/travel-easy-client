@@ -63,7 +63,7 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/reviewOne/${params.id}`),
+          fetch(`https://travel-easy-server.vercel.app/reviewOne/${params.id}`),
         element: (
           <PrivateRoute>
             <UpdateReview></UpdateReview>
@@ -74,7 +74,7 @@ const router = createBrowserRouter([
         path: "/services/:id",
         element: <SingleServiceCard></SingleServiceCard>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(`https://travel-easy-server.vercel.app/services/${params.id}`),
       },
     ],
   },

@@ -14,7 +14,7 @@ import useTitle from "../../Hook/useTitle";
 
 const LogIn = () => {
   useTitle("Login");
-  const { logInWithEmailAndPassword, continueWithGoogle } =
+  const { logInWithEmailAndPassword, continueWithGoogle, setLoading } =
     useContext(AuthContext);
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -39,7 +39,7 @@ const LogIn = () => {
           email: user.email,
         };
 
-        fetch(" http://localhost:5000/jwt", {
+        fetch(" https://travel-easy-server.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -55,6 +55,7 @@ const LogIn = () => {
       })
       .catch((error) => {
         setErrors({ ...errors, fireError: error.message });
+        setLoading(false);
       });
     setErrors({ ...errors, fireError: "" });
   }; // Sign in with google
@@ -65,7 +66,7 @@ const LogIn = () => {
         const currentUser = {
           email: user.email,
         };
-        fetch(" http://localhost:5000/jwt", {
+        fetch(" https://travel-easy-server.vercel.app/jwt", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(currentUser),

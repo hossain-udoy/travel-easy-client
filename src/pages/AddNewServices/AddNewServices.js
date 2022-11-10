@@ -8,7 +8,7 @@ const AddNewServices = () => {
   useTitle("NewService");
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/add-new-package", {
+    fetch("https://travel-easy-server.vercel.app/add-new-package", {
       method: "POST",
       headers: {
         "content-type": "application/json",

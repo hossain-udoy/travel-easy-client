@@ -48,7 +48,7 @@ const Registeration = () => {
         const currentUser = {
           email: user.email,
         };
-        fetch(" http://localhost:5000/jwt", {
+        fetch(" https://travel-easy-server.vercel.app/jwt", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(currentUser),
@@ -78,7 +78,7 @@ const Registeration = () => {
         const currentUser = {
           email: user.email,
         };
-        fetch(" http://localhost:5000/jwt", {
+        fetch(" https://travel-easy-server.vercel.app/jwt", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(currentUser),
