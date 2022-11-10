@@ -2,7 +2,7 @@
 
 # Easy-Travel
 
-## Programming languages learning website
+## Travel agency website
 
 ## If first link doesnot work use second link
 
