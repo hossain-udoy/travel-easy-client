@@ -82,8 +82,8 @@ const SingleServiceCard = () => {
           </div>
           <div className="content">
             <div className="details">
-              <h2 className="text-center mt-16 text-5xl">{location}</h2>
-              <div className="data text-lg flex justify-between mt-5">
+              <h2 className="text-center lg:mt-7 text-5xl">{location}</h2>
+              <div className="data text-lg mx-10 flex justify-between mt-5">
                 <h3 className="ml-5">Price: $ {price}/persopn</h3>
                 <div className="flex gap-2">
                   <BsCalendarDate></BsCalendarDate>
@@ -105,7 +105,10 @@ const SingleServiceCard = () => {
         <Review id={_id}></Review>
       </div>
       {user?.email ? (
-        <form onSubmit={handleReview}>
+        <form
+          onSubmit={handleReview}
+          className="border md:ml-32 mb-10 px-5 w-full mx-3 md:w-3/4"
+        >
           <div className="flex justify-between items-center pr-6">
             <h1 className="text-white uppercase font-semibold pb-3">
               give a review
@@ -120,13 +123,31 @@ const SingleServiceCard = () => {
             cols="30"
             rows="5"
           ></textarea>
-          <input
+          {/* <input
             name="star"
             required
             type="number"
             className="w-full px-4 py-2 md:mb-0  mt-1 outline-none focus:border-red-500 border-2 bg-white"
             placeholder="Give Star*"
-          />
+          /> */}
+          <label className="text-white text-xl" for="star">
+            Give Star
+          </label>
+
+          <select
+            name="star"
+            type="number"
+            placeholder="Give Star"
+            required
+            className="w-1/2 px-4 py-2 md:mb-0  mt-1 outline-none focus:border-red-500 border-2 bg-white"
+            id="star"
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
           <div className="md:flex py-3 gap-8 ">
             <input
               name="name"
@@ -152,12 +173,18 @@ const SingleServiceCard = () => {
           />
         </form>
       ) : (
-        <Link
-          to="/login"
-          className=" w-full btn btn-outline mt-5 mb-10 text-white"
-        >
-          Login
-        </Link>
+        <div>
+          <h1 className="text-3xl text-white text-center">
+            If you want to Review please Login.You will redirect to home page so
+            after login please come to this page again.
+          </h1>
+          <Link
+            to="/login"
+            className=" w-full md:w-3/4 md:ml-32 btn btn-outline mt-5 mb-10 text-white"
+          >
+            Login
+          </Link>
+        </div>
       )}
     </div>
   );

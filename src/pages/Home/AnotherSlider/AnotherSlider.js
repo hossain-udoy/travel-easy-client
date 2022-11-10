@@ -46,7 +46,12 @@ const ReviewSlider = () => {
       <h2 className="text-center my-5 text-slate-300 text-3xl font-semibold">
         <span className=""> Easy-Travel</span> Gallery
       </h2>
-      <Carousel slides={slides} autoplay={false} interval={1000} />
+      <Carousel
+        className="w-80"
+        slides={slides}
+        autoplay={false}
+        interval={1000}
+      />
     </div>
   );
 };

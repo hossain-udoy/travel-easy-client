@@ -32,14 +32,13 @@ const UpdateReview = () => {
     const email = review.email;
     const star = form.star.value;
     const message = form.message.value;
-    const userImg = form.userImg.value;
 
     const updateReview = {
       name,
       message,
       star,
       email,
-      userImg,
+
       currentDate,
     };
     fetch(`https://travel-easy-server.vercel.app/review/${review?._id}`, {
@@ -60,11 +59,11 @@ const UpdateReview = () => {
 
   return (
     <div>
-      <div className=" w-3/4 mx-auto my-16  shadow-2xl ">
+      <div className=" w-3/4 mx-auto my-16  shadow-2xl p-5">
         <form onSubmit={handleUpdateReview}>
-          <div className="form-control">
+          <div className="form-control w-3/4">
             <label className="label">
-              <span className="label-text">Name</span>
+              <span className="label-text text-white">Name</span>
             </label>
             <input
               name="name"
@@ -72,10 +71,11 @@ const UpdateReview = () => {
               defaultValue={review?.name}
               type="text"
               placeholder="Name"
-              className="input input-bordered"
+              className="input w-full input-bordered"
+              readOnly
             />
           </div>
-          <div className="form-control">
+          <div className="form-control w-3/4">
             <label className="label">
               <span className="label-text">Email</span>
             </label>
@@ -89,7 +89,7 @@ const UpdateReview = () => {
               readOnly
             />
           </div>
-          <div className="form-control">
+          <div className="form-control w-3/4">
             <label className="label">
               <span className="label-text">Review message</span>
             </label>
@@ -102,34 +102,29 @@ const UpdateReview = () => {
               className="input input-bordered"
             />
           </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text"> User PhotoUrl</span>
-            </label>
-            <input
-              name="userImg"
-              required
-              defaultValue={review?.userImg}
-              type="text"
-              placeholder="Photo url"
-              className="input input-bordered"
-            />
-          </div>
 
-          <div className="form-control">
+          <div className="form-control w-3/4">
             <label className="label">
               <span className="label-text">Stars</span>
             </label>
-            <input
+
+            <select
               name="star"
               required
               defaultValue={review?.star}
               type="text"
               placeholder="password"
               className="input input-bordered"
-            />
+              id="star"
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
           </div>
-          <div className="form-control mt-6">
+          <div className="form-control w-3/4 mt-6">
             <button className="btn btn-primary">Update</button>
           </div>
         </form>

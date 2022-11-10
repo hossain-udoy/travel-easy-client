@@ -11,6 +11,7 @@ const MyReview = () => {
   useTitle("My_Reviews");
   const { user, userLogOut } = useContext(AuthContext);
   const [myReview, setMyReview] = useState([]);
+  const [isdelete, setIsDelete] = useState(false);
   useEffect(() => {
     fetch(
       `https://travel-easy-server.vercel.app/myReview?email=${user?.email}`,
@@ -27,7 +28,8 @@ const MyReview = () => {
         return res.json();
       })
       .then((data) => setMyReview(data));
-  }, [user?.email, userLogOut]);
+  }, [user?.email, userLogOut, isdelete]);
+
   console.log(myReview);
   const handleDelete = async (id) => {
     const confirm = window.confirm(
@@ -41,6 +43,7 @@ const MyReview = () => {
         .then((result) => {
           if (result.acknowledged) {
             toast.success("Successfully deleted ", { duration: 3000 });
+            setIsDelete(true);
           }
         });
     }
@@ -49,12 +52,14 @@ const MyReview = () => {
     <div className="py-8">
       {myReview.length ? (
         <div>
-          <h1 className="text-3xl font-semibold text-center">My Reviews</h1>
+          <h1 className="text-3xl text-white font-semibold text-center mt-10 mb-10">
+            My Reviews
+          </h1>
           <div className="flex flex-col pt-4 gap-5">
             {myReview.map((review) => (
               <div
                 key={review._id}
-                className="bg-gray-300 shadow-lg rounded-lg  shadow-slate-500 justify-between sm:flex"
+                className="bg-gray-300 shadow-lg rounded-xl p-4  shadow-slate-500 justify-between sm:flex"
               >
                 <div className="sm:flex gap-3 ">
                   <PhotoProvider>
@@ -78,10 +83,14 @@ const MyReview = () => {
                     </p>
                     <h1 className="flex text-gray-700 items-center pt-3">
                       <span className="font-semibold">Stars:</span>
-                      <small className="ml-2 font-bold">{review.star}</small>
-                      <small className="pt-1 text-red-500">
-                        <FaStar />
-                      </small>
+                      <div>
+                        <small className="ml-2 font-bold">{review.star}</small>
+                      </div>
+                      <div>
+                        <small className="pt-1 text-red-500">
+                          <FaStar />
+                        </small>
+                      </div>
                     </h1>
                     <p>{review.currentDate}</p>
                   </div>
