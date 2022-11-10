@@ -1,9 +1,9 @@
-import React, { useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 const UpdateReview = () => {
   const navigate = useNavigate();
   const review = useLoaderData();
+  console.log(review);
   const handleUpdateReview = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -31,7 +31,7 @@ const UpdateReview = () => {
       .then((data) => {
         if (data.acknowledged) {
           toast.success("Review Update Successfully");
-          navigate("/review");
+          navigate("/myReview");
         }
       });
   };

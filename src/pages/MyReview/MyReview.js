@@ -74,16 +74,17 @@ const MyReview = () => {
                       {review.message}
                     </p>
                     <h1 className="flex text-gray-700 items-center pt-3">
-                      <span className="font-semibold">Starts:</span>
+                      <span className="font-semibold">Stars:</span>
                       <small className="ml-2 font-bold">{review.star}</small>
                       <small className="pt-1 text-red-500">
                         <FaStar />
                       </small>
                     </h1>
+                    <p>{review.currentDate}</p>
                   </div>
                 </div>
                 <div className="flex sm:flex-col justify-center gap-4 mb-4 sm:mb-0 sm:mt-0 mt-4 sm:mr-4">
-                  <Link to={`/updateReview/${review._id}`}>
+                  <Link to={`/update/${review._id}`}>
                     <BiEdit
                       title="Update Review"
                       className="cursor-pointer text-red-500 text-2xl"

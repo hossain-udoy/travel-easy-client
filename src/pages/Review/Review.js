@@ -44,13 +44,13 @@ const Review = ({ id }) => {
                   <div className="pt-2">
                     <p>{rev.message}</p>
                     <h1 className="flex items-center pt-3">
-                      Starts:{" "}
-                      <small className="ml-2 font-bold">{rev.star}</small>{" "}
+                      Stars:
+                      <small className="ml-2 font-bold">{rev.star}</small>
                       <small className="pt-1 text-red-500">
-                        {" "}
                         <FaStar />
                       </small>
                     </h1>
+                    <span>{rev.currentDate}</span>
                   </div>
                 </div>
               ))}
