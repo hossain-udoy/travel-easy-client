@@ -127,7 +127,7 @@ const Registeration = () => {
             {errors.fireError && (
               <p className=" text-center text-red-400">{errors.fireError}</p>
             )}
-            <h2 className="title">Sign up</h2>
+            <h2 className="title mt-5">Sign up</h2>
             <div className="input-field flex my-3 justify-center items-center gap-2">
               <div className="icon">
                 <FaUser></FaUser>
