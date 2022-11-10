@@ -23,7 +23,7 @@
   /* overflow: hidden; */
 }
 .card:hover {
-  height: 95vh;
+  height: 100vh;
   margin-top: 200px;
   margin-bottom: 20px;
   width: 80vw;
@@ -105,7 +105,7 @@
 
 .card:hover .imgBx {
   width: 45vw;
-  height: 45vh;
+  height: 35vh;
 }
 
 .card .imgBx::before {
@@ -180,7 +180,7 @@
   overflow: hidden;
 }
 .card .content .details {
-  padding-top: 60px;
+  padding-top: 30px;
   transition: 0.5s;
   color: #45f3ff;
   transform: translateY(170px);
@@ -192,4 +192,64 @@
 .card .content .details .data h3 {
   font-weight: 600;
   line-height: 1.2em;
+}
+@media only screen and (max-width: 1000px) {
+  .card:hover .content .details {
+    height: 100%;
+    transition: 0.5s;
+    color: #45f3ff;
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  .card:hover .imgBx {
+    width: 50vw;
+    height: 30vh;
+  }
+  .card .content .details {
+    padding-top: 0px;
+    transition: 0.5s;
+    color: #45f3ff;
+    transform: translateY(170px);
+  }
+}
+@media only screen and (max-width: 801px) {
+  .card:hover {
+    height: 100vh;
+    margin-top: 200px;
+    margin-bottom: 20px;
+    width: 90vw;
+  }
+  .card .content .details {
+    padding-top: 0px;
+    transition: 0.5s;
+    color: #45f3ff;
+    transform: translateY(170px);
+  }
+  .card:hover .content .details {
+    transform: translateY(190px);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .card:hover {
+    height: 100vh;
+    margin-top: 200px;
+    margin-bottom: 20px;
+    width: 100vw;
+  }
+  .card .content .details {
+    padding-top: 0px;
+    transition: 0.5s;
+    color: #45f3ff;
+    transform: translateY(170px);
+  }
+  .card:hover .content .details {
+    transform: translateY(190px);
+  }
+}
+@media only screen and (max-width: 424px) {
+  .card:hover {
+    height: 120vh;
+    width: 100vw;
+  }
 }

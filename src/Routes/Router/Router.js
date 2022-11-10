@@ -12,6 +12,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import MyReview from "../../pages/MyReview/MyReview";
 import Privacy from "../../pages/PrivacyPolicy/Privacy";
 import Notfound from "../../pages/NotFound/NotFound";
+import UpdateReview from "../../pages/Update/Update";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,16 @@ const router = createBrowserRouter([
       {
         path: "/privacy",
         element: <Privacy></Privacy>,
+      },
+      {
+        path: "/update/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/review/${params.id}`),
+        element: (
+          <PrivateRoute>
+            <UpdateReview></UpdateReview>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/services/:id",

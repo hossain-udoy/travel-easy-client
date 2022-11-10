@@ -48,6 +48,9 @@ const SingleServiceCard = () => {
   };
   return (
     <div>
+      <div className="text-center text-xl text-white mt-16">
+        Put the mouse over the picture
+      </div>
       <div className="container">
         <div className="card">
           <div className="lines"></div>
@@ -56,7 +59,7 @@ const SingleServiceCard = () => {
           </div>
           <div className="content">
             <div className="details">
-              <h2 className="text-center text-5xl">{location}</h2>
+              <h2 className="text-center mt-16 text-5xl">{location}</h2>
               <div className="data text-lg flex justify-between mt-5">
                 <h3 className="ml-5">Price: $ {price}/persopn</h3>
                 <div className="flex gap-2">

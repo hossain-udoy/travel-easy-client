@@ -83,7 +83,7 @@ const Navbar = () => {
               <span className="icon">
                 <IoIosPhotos></IoIosPhotos>
               </span>
-              <span className="text">My Reviews</span>
+              <span className="text">MyReviews</span>
             </NavLink>
           </li>
           <li title="Add New Services">
@@ -94,7 +94,7 @@ const Navbar = () => {
               <span className="icon">
                 <IoIosBook></IoIosBook>
               </span>
-              <span className="text">Add Services</span>
+              <span className="text">AddServices</span>
             </NavLink>
           </li>
         </ul>
