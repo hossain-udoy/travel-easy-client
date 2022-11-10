@@ -34,7 +34,7 @@ const AddNewServices = () => {
         className="mt-6 mb-5 lg:mx-44 space-y-4 rounded-lg p-8 shadow-2xl shadow-slate-50 text-center"
       >
         <div className="w-3/4">
-          <label for="Location" className="text-lg font-medium text-white">
+          <label for="Location" className="text-lg font-medium text-black">
             Tour Location
           </label>
 
