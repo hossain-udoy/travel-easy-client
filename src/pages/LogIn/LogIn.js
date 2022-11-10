@@ -167,9 +167,9 @@ const LogIn = () => {
             <a href="/login" className="social-icon disabled">
               <FaTwitter></FaTwitter>
             </a>
-            <a href="/" onClick={signInWithGoogle} className="social-icon">
+            <button onClick={signInWithGoogle} className="social-icon">
               <FaGoogle></FaGoogle>
-            </a>
+            </button>
             <a href="/login" className="social-icon disabled">
               <FaLinkedin></FaLinkedin>
             </a>
