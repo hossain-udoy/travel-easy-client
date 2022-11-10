@@ -13,26 +13,28 @@ const SingleServiceCard = () => {
   const { _id, location, description, price, img, day, ratingsCount } =
     useLoaderData();
   const { user } = useContext(AuthContext);
+
   // date format
-  function formatDate(date) {
-    const yyyy = date.getFullYear();
-    let mm = date.getMonth() + 1;
-    let dd = date.getDate();
+  // function formatDate(date) {
+  //   const yyyy = date.getFullYear();
+  //   let mm = date.getMonth() + 1;
+  //   let dd = date.getDate();
 
-    if (dd < 10) dd = "0" + dd;
-    if (mm < 10) mm = "0" + mm;
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let ampm = hours >= 12 ? "PM" : "AM";
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    let strTime =
-      hours + ":" + minutes + " " + ampm + " " + dd + "/" + mm + "/" + yyyy;
-    return strTime;
-  }
+  //   if (dd < 10) dd = "0" + dd;
+  //   if (mm < 10) mm = "0" + mm;
+  //   let hours = date.getHours();
+  //   let minutes = date.getMinutes();
+  //   let ampm = hours >= 12 ? "PM" : "AM";
+  //   hours = hours % 12;
+  //   hours = hours ? hours : 12; // the hour '0' should be '12'
+  //   minutes = minutes < 10 ? "0" + minutes : minutes;
+  //   let strTime =
+  //     hours + ":" + minutes + " " + ampm + " " + dd + "/" + mm + "/" + yyyy;
+  //   return strTime;
+  // }
 
-  const currentDate = formatDate(new Date());
+  // const currentDate = formatDate(new Date());
+  const currentDate = new Date().toLocaleString("en-GB");
   const handleReview = async (e) => {
     e.preventDefault();
     const form = e.target;

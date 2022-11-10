@@ -29,6 +29,7 @@ const LogIn = () => {
     password: "",
     fireError: "",
   });
+
   // sign in with email and password
   const signInWithEmailAndPassword = (e) => {
     e.preventDefault();

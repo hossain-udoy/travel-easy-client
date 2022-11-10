@@ -87,7 +87,7 @@ const Registeration = () => {
           .then((data) => {
             localStorage.setItem("tour-token", data.token);
             navigate(from, { replace: true });
-            toast.success("hello");
+            toast.success("Register Success");
           });
       })
       .catch((error) => {
