@@ -1,6 +1,8 @@
 import React from "react";
+import useTitle from "../../Hook/useTitle";
 
 const Privacy = () => {
+  useTitle("Privacy");
   return (
     <div>
       <section className="bg-slate-500 text-white">

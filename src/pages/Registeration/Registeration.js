@@ -14,9 +14,11 @@ import {
 } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import useTitle from "../../Hook/useTitle";
 import "./Registeration.css";
 
 const Registeration = () => {
+  useTitle("Register");
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",

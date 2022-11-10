@@ -10,8 +10,10 @@ import {
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import useTitle from "../../Hook/useTitle";
 
 const LogIn = () => {
+  useTitle("Login");
   const { logInWithEmailAndPassword, continueWithGoogle } =
     useContext(AuthContext);
   const location = useLocation();

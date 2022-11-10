@@ -1,8 +1,10 @@
 import React from "react";
 import { AiFillQuestionCircle } from "react-icons/ai";
+import useTitle from "../../Hook/useTitle";
 import BlogHeader from "./BlogHeader";
 
 const Blog = () => {
+  useTitle("Blog");
   return (
     <div>
       <BlogHeader></BlogHeader>

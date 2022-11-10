@@ -1,6 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-
-// import useTitle from "../../Hooks/useTitle";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { FaStar } from "react-icons/fa";
 import { BiEdit } from "react-icons/bi";
@@ -8,8 +6,9 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import useTitle from "../../Hook/useTitle";
 const MyReview = () => {
-  //   useTitle("My_Reviews");
+  useTitle("My_Reviews");
   const { user, userLogOut } = useContext(AuthContext);
   const [myReview, setMyReview] = useState([]);
   useEffect(() => {

@@ -2,8 +2,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Button from "@restart/ui/esm/Button";
 import toast from "react-hot-toast";
+import useTitle from "../../Hook/useTitle";
 
 const AddNewServices = () => {
+  useTitle("NewService");
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     fetch("http://localhost:5000/add-new-package", {

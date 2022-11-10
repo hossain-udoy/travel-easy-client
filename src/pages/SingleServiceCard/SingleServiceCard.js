@@ -6,8 +6,10 @@ import { AiFillStar } from "react-icons/ai";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 import Review from "../Review/Review";
+import useTitle from "../../Hook/useTitle";
 
 const SingleServiceCard = () => {
+  useTitle("SingleService");
   const { _id, location, description, price, img, day, ratingsCount } =
     useLoaderData();
   const { user } = useContext(AuthContext);
