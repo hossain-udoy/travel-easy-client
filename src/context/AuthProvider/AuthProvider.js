@@ -46,7 +46,7 @@ const AuthProvider = ({ children }) => {
     localStorage.clear();
     return signOut(auth);
   };
-  // auth on state change ...  who is the login now log out now for checking
+
   useEffect(() => {
     const unSubscribes = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);

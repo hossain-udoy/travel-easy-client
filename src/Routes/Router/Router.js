@@ -11,11 +11,13 @@ import Registeration from "../../pages/Registeration/Registeration";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import MyReview from "../../pages/MyReview/MyReview";
 import Privacy from "../../pages/PrivacyPolicy/Privacy";
+import Notfound from "../../pages/NotFound/NotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <Notfound></Notfound>,
     children: [
       {
         path: "/",
@@ -59,11 +61,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/services/:id",
-        element: (
-          <PrivateRoute>
-            <SingleServiceCard></SingleServiceCard>
-          </PrivateRoute>
-        ),
+        element: <SingleServiceCard></SingleServiceCard>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/services/${params.id}`),
       },
