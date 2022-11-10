@@ -9,7 +9,7 @@ const WhyUs = () => {
       <h5 className="text-slate-300 font-semibold text-3xl">Why Us</h5>
       <h2>Why You Are Travel With Easy-Travel</h2>
 
-      <div className="flex gap-5 mb-8 mx-5 mt-5">
+      <div className="flex lg:flex-row flex-col gap-5 mb-8 mx-5 mt-5">
         <a
           className="flex flex-col p-16 text-3xl rounded-xl border border-gray-800 bg-white text-slate-500 shadow-xl items-center justify-center shadow-slate-500"
           href="/"
@@ -28,6 +28,7 @@ const WhyUs = () => {
             Trusted travel agency
           </h3>
         </a>
+
         <a
           className="flex flex-col text-3xl rounded-xl border border-gray-800 bg-white text-slate-500 p-16 shadow-xl items-center justify-center shadow-slate-500"
           href="/"
